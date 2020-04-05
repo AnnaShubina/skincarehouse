@@ -1,0 +1,27 @@
+.swiper {}
+.swiper--intro {
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    display: block;
+    border: 2px solid $color-brand;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(135deg);
+
+    &:after {
+      display: none;
+    }
+
+    &:hover {
+      border-color: $color-text;
+    }
+  }
+  .swiper-button-prev {
+    margin-right: 40px;
+    transform: rotate(-45deg);
+  }
+}

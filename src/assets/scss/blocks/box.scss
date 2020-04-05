@@ -1,0 +1,52 @@
+.box {
+}
+.box--m {
+  margin-bottom: 210px;
+}
+.box__header {
+  position: relative;
+  margin-bottom: 90px;
+}
+.box__header--m {
+  margin-bottom: 75px;
+}
+.box__title {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 72px;
+  font-weight: 300;
+}
+.box__title--l {
+  font-size: 64px;
+  @include media(from, xxxxl) {
+    font-size: 72px;
+  }
+  @include media(from, 1800) {
+    font-size: 82px;
+  }
+  @include media(from, 1960) {
+    font-size: 90px;
+  }
+}
+.box__caption {
+  position: absolute;
+  top: 18%;
+  right: 10%;
+  font-weight: 300;
+  font-size: 16px;
+  @include media(from, xxxl) {
+    font-size: 18px;
+  }
+  @include media(from, 1800) {
+    right: 14%;
+  }
+}
+.box__content {
+
+}
+.box__content--flex {
+  display: flex;
+  align-items: center;
+
+}

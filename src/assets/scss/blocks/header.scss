@@ -1,0 +1,80 @@
+.header {
+  position: relative;
+}
+.header__wrap {
+  padding: 50px 0 30px 0;
+  display: flex;
+  align-items: center;
+}
+.header__nav {
+  width: 180px;
+}
+.header__navBtn {
+  @include btnClear;
+  color: $color-brand;
+  width: 29px;
+  height: 22px;
+  svg {
+    width: 29px;
+    height: 22px;
+  }
+  &:hover {
+    color: $color-text;
+  }
+}
+.header__center {
+  flex-grow: 1;
+  display: flex;
+}
+.header__indent {
+  width: 41%;
+  margin-right: 180px;
+}
+.header__logo {
+  @include link;
+  color: $color-brand;
+  width: 195px;
+  height: 28px;
+  svg {
+    vertical-align: middle;
+    width: 195px;
+    height: 28px;
+  }
+  &:hover {
+    color: $color-text;
+  }
+}
+.header__right {
+  width: 90px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.header__basket {}
+.header__basketBtn {
+  @include btnClear;
+  color: $color-brand;
+  width: 22px;
+  height: 29px;
+  svg {
+    width: 22px;
+    height: 29px;
+  }
+  &:hover {
+    color: $color-text;
+  }
+}
+.header__search {}
+.header__searchBtn {
+  @include btnClear;
+  color: $color-brand;
+  width: 30px;
+  height: 32px;
+  svg {
+    width: 30px;
+    height: 32px;
+  }
+  &:hover {
+    color: $color-text;
+  }
+}

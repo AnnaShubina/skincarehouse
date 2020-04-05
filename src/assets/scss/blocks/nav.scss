@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav__item {
+  @include link;
+  text-transform: uppercase;
+  margin-right: 50px;
+}
+.nav--item:last-child {
+  margin-right: 0;
+}

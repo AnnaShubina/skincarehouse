@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color:$color-light;
+  color: $color-text;
+  font-family: $font-family-montserrat;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: $line-height;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
