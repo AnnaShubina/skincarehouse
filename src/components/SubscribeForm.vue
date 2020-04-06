@@ -1,6 +1,6 @@
 <template>
   <form class="_SubscribeForm fieldWrap" @submit.prevent.stop>
-    <div class="field" v-if="!isSent">
+    <div class="field" v-if="!isSent" :class="{ error: errorEmail && email }">
       <input type="email" class="field__input"
              placeholder="E-mail address"
              v-model="email"

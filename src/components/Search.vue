@@ -1,6 +1,6 @@
 <template>
   <header class="_Search search" :class="{ active: isActive }">
-    <input type="text" ref="search" class="search__field">
+    <input type="text" ref="search" class="search__field" v-model="searchString">
     <button class="search__btn" @click="openSearch">
       <SearchSvg/>
     </button>
@@ -17,21 +17,26 @@
     },
     data() {
       return {
-        isActive: false
+        isActive: false,
+        searchString: ''
       }
     },
     methods: {
-      openSearch() {
-        this.isActive = true;
-        document.body.addEventListener('click', this.onBodyClick);
-      },
       onBodyClick(e) {
         if (e.target.closest('.search') === null) {
-          this.isActive = false;
+          this.closeSearch();
         } else {
-          this.isActive = true;
-          this.$refs.search.focus();
+          this.openSearch();
         }
+      },
+      openSearch() {
+        this.isActive = true;
+        this.$refs.search.focus();
+        document.body.addEventListener('click', this.onBodyClick);
+      },
+      closeSearch() {
+        this.isActive = false;
+        this.searchString = '';
       }
     },
     beforeDestroy() {
