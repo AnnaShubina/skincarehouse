@@ -1,4 +1,5 @@
 .box {
+  position: relative;
 }
 .box--m {
   margin-bottom: 210px;
@@ -17,6 +18,9 @@
   font-size: 72px;
   font-weight: 300;
 }
+.box__title--top {
+  padding-top: 56px;
+}
 .box__title--l {
   font-size: 64px;
   @include media(from, xxxxl) {
@@ -28,6 +32,9 @@
   @include media(from, 1960) {
     font-size: 90px;
   }
+}
+.box__subTitle {
+  margin-top: 80px;
 }
 .box__caption {
   position: absolute;
@@ -48,5 +55,11 @@
 .box__content--flex {
   display: flex;
   align-items: center;
-
+}
+.box__number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: $font-family-gilroy;
+  letter-spacing: 0.015em;
 }

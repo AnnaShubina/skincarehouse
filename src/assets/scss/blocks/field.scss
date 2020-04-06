@@ -1,0 +1,99 @@
+.field {
+  position: relative;
+  font-family: $font-family-gilroy;
+
+  &:hover {
+    .field__arrow {
+      border-color: $color-text;
+    }
+    .field__input {
+      border: 1px solid $color-text;
+    }
+  }
+}
+.field__input {
+  width: 100%;
+  padding: 35px 60px 35px 28px;
+  border: 1px solid $color-brand;
+  background-color: transparent;
+  box-shadow: none;
+  font-family: $font-family-gilroy;
+  color: $color-form;
+  line-height: 1.3;
+  font-size: 18px;
+  font-weight: 400;
+  transition: border .2s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $color-text;
+    box-shadow: none;
+  }
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: rgba(43, 42, 42, .5);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(43, 42, 42, .5);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(43, 42, 42, .5);
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: rgba(43, 42, 42, .5);
+}
+.field__right {
+  position: absolute;
+  right: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  svg {
+    vertical-align: middle;
+  }
+}
+.field__arrow {
+  @include btnClear;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid $color-brand;
+  border-right: none;
+  border-bottom: none;
+  transform: translateY(-50%) rotate(135deg);
+  transition: border-color .2s ease;
+}
+.field__error {
+  color: $color-error;
+}
+
+.fieldReady {
+  display: block;
+  width: 100%;
+  height: 95px;
+  border: 1px solid $color-text;
+  padding: 28px 5px;
+  text-align: center;
+  font-size: 24px;
+  font-family: $font-family-gilroy;
+  color: $color-text;
+}
+.fieldReady__mark {
+  width: 30px;
+  height: 30px;
+  margin-left: 13px;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.fieldWrap {
+  max-width: 935px;
+  margin: 0 auto;
+}
+.fieldWrap__caption {
+  font-size: 24px;
+  color: $color-form;
+  margin-top: 16px;
+}

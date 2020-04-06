@@ -1,7 +1,8 @@
 <template>
   <div class="Home">
-    <Intro/>
-    <section class="box box--m">
+    <Intro @goTo="onClickDown"/>
+    <section class="box box--m" ref="catalogue">
+      <div class="box__number">02/05</div>
       <div class="box__header">
         <h2 class="box__title">Catalogue</h2>
       </div>
@@ -51,7 +52,7 @@
               <img src="../assets/img/products/herbivore-pink-cloud.jpg" alt="">
             </div>
           </div>
-          <div class="wrap__item">
+          <div class="wrap__item card">
             <div class="card__content card__content--vertical card__content--bottom">
               <h4 class="card__title">Herbivore Pink Cloud</h4>
               <div class="card__price">$&nbsp;20</div>
@@ -62,6 +63,7 @@
       </div>
     </div>
     <div class="box box--m">
+      <div class="box__number">03/05</div>
       <div class="layout layout--inner box__content">
         <div class="wrap wrap--row">
           <div class="wrap__item wrap__item--xs wrap__indent--s card card--vertical">
@@ -92,19 +94,71 @@
         </div>
       </div>
     </div>
+    <div class="box box--m">
+      <div class="box__number">04/05</div>
+      <div class="box__header">
+        <h2 class="box__title">Sale</h2>
+      </div>
+      <div class="layout layout--inner box__content">
+        <div class="wrap card">
+          <div class="wrap__item wrap__item--s wrap__indent--m">
+            <div class="card__pic">
+              <img src="../assets/img/products/hb-soap-trio.jpg" alt="">
+            </div>
+          </div>
+          <div class="wrap__item card card--sale">
+            <div class="card__content">
+              <h4 class="card__title">Get 3 for price of 2</h4>
+              <div class="card__caption">Pink Clay, Blue Clay and Bamboo Charcoal <br> in one set. Try now while offer is available!</div>
+              <div class="card__footer">
+                <router-link to="/" class="btn">Try now</router-link>
+              </div>
+            </div>
+            <div class="card__pic">
+              <img src="../assets/img/sale.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box box--m">
+      <div class="box__number">05/05</div>
+      <div class="box__header box__header--m text-center">
+        <h2 class="box__title box__title--top">Let’s keep in touch</h2>
+        <div class="box__subTitle">If you would like to get information about sales and arrivals <br> you can leave your e-mail in the form below.</div>
+      </div>
+      <div class="box__content">
+        <SubscribeForm/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import Intro from "../components/Intro";
+  import SubscribeForm from "../components/SubscribeForm";
 
   export default {
     name: 'Home',
     components: {
+      SubscribeForm,
       Intro
     },
     data() {
       return {}
+    },
+    methods: {
+      onClickDown() {
+        let target = this.$refs.catalogue;
+        if (target) {
+          let pos = target.offsetTop;
+          window.scrollTo({
+            top: pos - 20,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+      },
     }
   }
 </script>

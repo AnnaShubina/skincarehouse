@@ -12,7 +12,7 @@
           <YoutubeSvg/>
         </a>
       </div>
-      <div class="intro__scroll">
+      <div class="intro__scroll" @click="$emit('goTo')">
         <ScrollSvg/>
       </div>
     </div>

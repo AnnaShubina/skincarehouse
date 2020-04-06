@@ -92,6 +92,9 @@
 .text-bold {
 	font-weight: 600;
 }
+.text--thin {
+  font-weight: 300;
+}
 @each $key, $val in $breakpoints-map {
 	@include media($key) {
 		.text-right-#{$key} {
@@ -132,4 +135,20 @@
 
 .pointer{
 	cursor: pointer;
+}
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+.rotate {
+  transform-origin: center;
+  animation-name: rotation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }

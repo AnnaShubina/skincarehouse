@@ -1,0 +1,42 @@
+.search {
+  position: relative;
+  height: 30px;
+}
+.search__btn {
+  @include btnClear;
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+  color: $color-brand;
+  width: 30px;
+  height: 32px;
+  svg {
+    width: 30px;
+    height: 32px;
+  }
+  &:hover {
+    color: $color-text;
+  }
+}
+.search__field {
+  width: 100%;
+  padding: 4px 20px;
+  border: none;
+  border-bottom: 1px solid $color-text;
+  background-color: transparent;
+  box-shadow: none;
+  font-family: $font-family-gilroy;
+  color: $color-form;
+  line-height: 1.3;
+  font-size: 18px;
+  font-weight: 400;
+  display: none;
+}
+.active {
+  .search__field {
+    display: block;
+  }
+  .search__btn {
+    color: $color-text;
+  }
+}

@@ -42,58 +42,65 @@ $small-indent: 72px;
   display: flex;
   align-items: stretch;
   flex-direction: row;
-  .wrap__item {
-    height: auto;
-    .card__pic {
-      flex-grow: 1;
-    }
+}
+
+.wrap__item {
+  height: auto;
+  .card__pic {
+    flex-grow: 1;
   }
-  .wrap__item--col {
-    display: flex;
-    flex-direction: column;
-    height: auto;
+}
+.wrap__item--col {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.wrap__item--l,
+.wrap__item--xl {
+  flex-shrink: 0;
+}
+@include media(from, l) {
+  .wrap__indent--l {
+    margin-right: $base-indent-l;
   }
-  .wrap__item--l,
+  .wrap__indent--m {
+    margin-right: $base-indent;
+  }
+  .wrap__indent--s {
+    margin-right: $small-indent;
+  }
+  .wrap__item--l {
+    width: calc(#{$base-width} + #{$base-indent});
+  }
   .wrap__item--xl {
-    flex-shrink: 0;
+    width: calc(#{$base-width} + #{$base-indent-xl});
+    margin-right: $small-indent;
   }
-  @include media(from, l) {
-    .wrap__indent--l {
-      margin-right: $base-indent-l;
-    }
-    .wrap__indent--s {
-      margin-right: $small-indent;
-    }
-    .wrap__item--l {
-      width: calc(#{$base-width} + #{$base-indent});
-    }
-    .wrap__item--xl {
-      width: calc(#{$base-width} + #{$base-indent-xl});
-      margin-right: $small-indent;
-    }
+}
+@include media(from, xxxl) {
+  .wrap__indent--l {
+    margin-right: $base-indent-l;
   }
-  @include media(from, xxxl) {
-    .wrap__indent--l {
-      margin-right: $base-indent-l;
-    }
-    .wrap__indent--s {
-      margin-right: $small-indent;
-    }
-    .wrap__item--xs {
-      width: calc(#{$base-width} - #{$base-indent});
-    }
-    .wrap__item--s {
-      width: $base-width;
-    }
-    .wrap__item--m {
-      width: calc(#{$base-width} + #{$base-indent});
-    }
-    .wrap__item--l {
-      width: calc(#{$base-width} + #{$base-indent-l});
-    }
-    .wrap__item--xl {
-      width: calc(#{$base-width} + #{$base-indent-xl});
-    }
+  .wrap__indent--m {
+    margin-right: $base-indent;
+  }
+  .wrap__indent--s {
+    margin-right: $small-indent;
+  }
+  .wrap__item--xs {
+    width: calc(#{$base-width} - #{$base-indent});
+  }
+  .wrap__item--s {
+    width: $base-width;
+  }
+  .wrap__item--m {
+    width: calc(#{$base-width} + #{$base-indent});
+  }
+  .wrap__item--l {
+    width: calc(#{$base-width} + #{$base-indent-l});
+  }
+  .wrap__item--xl {
+    width: calc(#{$base-width} + #{$base-indent-xl});
   }
 }
 

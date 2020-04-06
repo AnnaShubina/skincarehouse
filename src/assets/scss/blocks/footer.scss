@@ -1,0 +1,26 @@
+.footer {
+  border-top: 1px solid rgba(79, 55, 55, .3);
+}
+.footer__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 90px 0 213px;
+}
+.footer__item {
+  text-transform: uppercase;
+}
+.footer__item--indent {
+  margin: 0 90px;
+}
+.footer__item--right {
+  margin-right: 90px;
+}
+.footer__link {
+  @include link;
+  display: block;
+  margin-bottom: 8px;
+}
+.footer__title {
+  margin-bottom: 9px;
+}
