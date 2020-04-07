@@ -6,7 +6,17 @@
   @include link;
   text-transform: uppercase;
   margin-right: 50px;
+
+  &:disabled {
+    color: $color-gray;
+  }
 }
 .nav--item:last-child {
   margin-right: 0;
+}
+.nav__item.active {
+  &:hover {
+    cursor: default;
+    color: $color-text;
+  }
 }

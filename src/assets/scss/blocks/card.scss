@@ -24,6 +24,9 @@
     }
   }
 }
+.card--ml-auto {
+  margin-left: auto;
+}
 .card__pic {
   img {
     width: 100%;
@@ -45,6 +48,9 @@
 }
 .card__pic--top {
   padding-top: 210px;
+}
+.card__pic--top-m {
+  padding-top: 145px;
 }
 .card__title {
   margin: 0;
@@ -82,9 +88,15 @@
 .card__content--flex {
   display: flex;
   align-items: center;
+  .card__title {
+    margin-right: 5px;
+  }
   .card__price {
     margin-left: auto;
     margin-right: 30px;
+  }
+  .card__price--s {
+    margin-right: 24px;
   }
 }
 .card__content--top {

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../pages/Home'
-const Bar = { template: '<div>bar</div>' }
+import Catalogue from '../pages/Catalogue'
 
 Vue.use(VueRouter);
 
@@ -10,9 +10,16 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: Home
     },
-    { path: '/bar', component: Bar }
-  ]
+    {
+      path: '/catalogue',
+      name: 'catalogue',
+      component: Catalogue
+    },
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

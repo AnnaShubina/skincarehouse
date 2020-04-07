@@ -1,5 +1,5 @@
 <template>
-  <div class="Home">
+  <div class="_Home">
     <Intro @goTo="onClickDown"/>
     <section class="box box--m" ref="catalogue">
       <div class="box__number">02/05</div>
@@ -9,15 +9,15 @@
       <div class="box layout layout--inner">
         <div class="box__header">
           <nav class="nav">
-            <router-link to="/" class="nav__item">Soap collection</router-link>
+            <router-link to="/Catalogue" class="nav__item">Soap collection</router-link>
             <router-link to="/" class="nav__item">Creme collection</router-link>
             <router-link to="/" class="nav__item">Body collection </router-link>
             <router-link to="/" class="nav__item">Sale</router-link>
           </nav>
         </div>
         <div class="box__content">
-          <div class="wrap">
-            <div class="card card--vertical wrap__item wrap__item--l wrap__indent--l">
+          <div class="cells cells--between">
+            <div class="card card--vertical cell__9">
               <div class="card__pic">
                 <img src="../assets/img/products/herbivore-pink-clay.jpg" alt="">
               </div>
@@ -27,7 +27,7 @@
                 <button class="card__buy">buy</button>
               </div>
             </div>
-            <div class="card card--vertical wrap__item">
+            <div class="card card--vertical cell__6">
               <div class="card__pic">
                 <img src="../assets/img/products/holla-sapa-icelandic-moss.jpg" alt="">
               </div>
@@ -46,13 +46,13 @@
         <h2 class="box__title">New arrivals</h2>
       </div>
       <div class="layout layout--inner box__content">
-        <div class="wrap card">
-          <div class="wrap__item wrap__item--xl wrap__indent--s">
+        <div class="cells card">
+          <div class="cell__11 indent__right">
             <div class="card__pic">
               <img src="../assets/img/products/herbivore-pink-cloud.jpg" alt="">
             </div>
           </div>
-          <div class="wrap__item card">
+          <div class="card">
             <div class="card__content card__content--vertical card__content--bottom">
               <h4 class="card__title">Herbivore Pink Cloud</h4>
               <div class="card__price">$&nbsp;20</div>
@@ -65,8 +65,8 @@
     <div class="box box--m">
       <div class="box__number">03/05</div>
       <div class="layout layout--inner box__content">
-        <div class="wrap wrap--row">
-          <div class="wrap__item wrap__item--xs wrap__indent--s card card--vertical">
+        <div class="cells">
+          <div class="cell__5 indent__right card card--vertical">
             <div class="card__pic card__pic--stick">
               <img src="../assets/img/products/kylieskin-body-lotion.jpg" alt="">
             </div>
@@ -74,7 +74,7 @@
               <router-link to="/" class="btn">Shop now</router-link>
             </div>
           </div>
-          <div class="wrap__item card card--vertical">
+          <div class="card card--vertical">
             <div class="card__content card__content--vertical">
               <h4 class="card__title">Herbivore Pink Cloud</h4>
               <div class="card__price">$&nbsp;17</div>
@@ -86,7 +86,7 @@
               <button class="card__buy">buy</button>
             </div>
           </div>
-          <div class="wrap__item wrap__item--m card">
+          <div class="cell__8 card card--ml-auto">
             <div class="card__pic card__pic--top">
               <img src="../assets/img/products/honest-cleanser-gel.jpg" alt="">
             </div>
@@ -100,13 +100,14 @@
         <h2 class="box__title">Sale</h2>
       </div>
       <div class="layout layout--inner box__content">
-        <div class="wrap card">
-          <div class="wrap__item wrap__item--s wrap__indent--m">
+        <div class="cells card">
+          <div class="cell__7">
             <div class="card__pic">
               <img src="../assets/img/products/hb-soap-trio.jpg" alt="">
             </div>
           </div>
-          <div class="wrap__item card card--sale">
+          <div class="cell__1"></div>
+          <div class="card card--sale">
             <div class="card__content">
               <h4 class="card__title">Get 3 for price of 2</h4>
               <div class="card__caption">Pink Clay, Blue Clay and Bamboo Charcoal <br> in one set. Try now while offer is available!</div>

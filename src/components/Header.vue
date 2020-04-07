@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="header__center">
-        <div class="header__indent"></div>
+        <div class="header__indent" :class="{ 'header__indent--right': $route.name === 'home' }"></div>
         <router-link to="/" class="header__logo">
           <LogoSvg/>
         </router-link>

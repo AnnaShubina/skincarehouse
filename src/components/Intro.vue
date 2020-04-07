@@ -26,10 +26,11 @@
         </div>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="intro__wrap">
-              <div class="intro__pic">
+            <div class="cells">
+              <div class="cell__7 intro__pic">
                 <img src="../assets/img/intro-slider/main-girl.jpg" alt="">
               </div>
+              <div class="cell__2"></div>
               <div class="intro__content">
                 <div class="box">
                   <div class="box__header box__header--m">
@@ -50,10 +51,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="intro__wrap">
-              <div class="intro__pic">
+            <div class="cells">
+              <div class="cell__7 intro__pic">
                 <img src="../assets/img/intro-slider/slide-2-girl.jpg" alt="">
               </div>
+              <div class="cell__2"></div>
               <div class="intro__content">
                 <div class="box">
                   <div class="box__header box__header--m">
@@ -74,10 +76,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="intro__wrap">
-              <div class="intro__pic">
+            <div class="cells">
+              <div class="cell__7 intro__pic">
                 <img src="../assets/img/intro-slider/slide-3.jpg" alt="">
               </div>
+              <div class="cell__2"></div>
               <div class="intro__content">
                 <div class="box">
                   <div class="box__header box__header--m">

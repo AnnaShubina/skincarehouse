@@ -11,15 +11,6 @@
   align-items: stretch;
 }
 .intro__pic {
-  width: 41%;
-  flex-shrink: 0;
-  margin-right: 0;
-  @include media(from, l) {
-    margin-right: 90px;
-  }
-  @include media(from, xxxl) {
-    margin-right: 180px;
-  }
   img {
     width: 100%;
     height: 100%;

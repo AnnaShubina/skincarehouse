@@ -1,200 +1,41 @@
-$base-width: 41%;
-$base-width-diff: 49%;
-$base-indent: 90px;
-$base-indent-xl: 360px;
-$base-indent-l: 180px;
-$base-indent-m: 60px;
-$base-indent-s: 30px;
-$small-indent: 72px;
+$column: 5.9%;
+$columns: 12;
+$indent: 4.6%;
 
-.layout {
-	min-width: 320px;
-	max-width: 1980px;
-	padding: 0 15px;
-	margin: 0 auto;
-	@include media(from, s) {
-		padding: 0 $base-indent - $base-indent-s;
-	}
-	@include media(from, xl) {
-		padding: 0 $base-indent - $base-indent-m;
-	}
-  @include media(from, xxxl) {
-    padding: 0 $base-indent;
-  }
-}
-.layout--full {
-	max-width: 100%;
-}
-.layout--inner {
-  padding: 0;
-  @include media(from, s) {
-    padding: 0 $base-indent-s 0 $base-indent - $base-indent-m;
-  }
-  @include media(from, xl) {
-    padding: 0 $base-indent-m 0 $base-indent;
-  }
-  @include media(from, xxxl) {
-    padding: 0 $base-indent 0 $base-indent-l;
-  }
+.indent__right {
+  margin-right: $indent;
 }
 
-.wrap {
-  display: flex;
-  align-items: stretch;
-  flex-direction: row;
-}
-
-.wrap__item {
-  height: auto;
-  .card__pic {
-    flex-grow: 1;
-  }
-}
-.wrap__item--col {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
-.wrap__item--l,
-.wrap__item--xl {
-  flex-shrink: 0;
-}
-@include media(from, l) {
-  .wrap__indent--l {
-    margin-right: $base-indent-l;
-  }
-  .wrap__indent--m {
-    margin-right: $base-indent;
-  }
-  .wrap__indent--s {
-    margin-right: $small-indent;
-  }
-  .wrap__item--l {
-    width: calc(#{$base-width} + #{$base-indent});
-  }
-  .wrap__item--xl {
-    width: calc(#{$base-width} + #{$base-indent-xl});
-    margin-right: $small-indent;
-  }
-}
-@include media(from, xxxl) {
-  .wrap__indent--l {
-    margin-right: $base-indent-l;
-  }
-  .wrap__indent--m {
-    margin-right: $base-indent;
-  }
-  .wrap__indent--s {
-    margin-right: $small-indent;
-  }
-  .wrap__item--xs {
-    width: calc(#{$base-width} - #{$base-indent});
-  }
-  .wrap__item--s {
-    width: $base-width;
-  }
-  .wrap__item--m {
-    width: calc(#{$base-width} + #{$base-indent});
-  }
-  .wrap__item--l {
-    width: calc(#{$base-width} + #{$base-indent-l});
-  }
-  .wrap__item--xl {
-    width: calc(#{$base-width} + #{$base-indent-xl});
-  }
-}
-
-.wrap--row {
-  justify-content: space-between;
-}
-
-.cells,
-.cells.cell,
-.cell--parent {
-	font-size: 0 !important;
-	display: block;
-}
-
-.cells--indent {
-	margin: 0 -15px -30px -15px;
-	& > [class^="cell_"], .cell {
-		padding: 0 15px 30px 15px;
-	}
-	.cell--stick {
-		padding-bottom: 0;
-	}
-}
-
-.cells--indent-10 {
-	margin: 0 -5px -10px -5px;
-	& > [class^="cell_"] {
-		padding: 0 5px 10px 5px;
-	}
-	.cell--stick {
-		padding-bottom: 0;
-	}
-}
-
-.cells--indent-20 {
-	margin: 0 -10px -20px -10px;
-	& > [class^="cell_"] {
-		padding: 0 10px 20px 10px;
-	}
-	.cell--stick {
-		padding-bottom: 0;
-	}
-}
-
-.cells--line {
-	margin-bottom: 0;
-	margin-top: 0;
-	& > [class ^="cell_"] {
-		padding-bottom: 0;
-		padding-top: 0;
-	}
-}
-
-.cells--flex {
+.cells {
 	display: flex;
 	align-items: stretch;
-	flex-wrap: wrap;
 	& > [class ^="cell_"] {
 		flex-shrink: 0;
 		flex-grow: 0;
 	}
 }
 
-.cell__inner {
-	height: 100%;
-}
-
-[class^="cell_"] {
-	display: inline-block;
-	vertical-align: top;
-	width: 100%;
-	font-size: $font-size;
-}
-
-.cell__0 {
-	width: 1px;
-	margin-left: -1px;
-}
-
-.celSeparator {
-	width: 100%;
+.cells--between {
+  justify-content: space-between;
 }
 
 @for $i from 0 through $columns {
 	.cell__#{$i} {
-		width: 100%/$columns * $i;
+		width: $column * $i;
 	}
+}
+
+@for $i from 0 through $columns {
+  .cell__#{$i}-indent {
+    width: $column * $i + $indent;
+  }
 }
 
 @each $key, $val in $breakpoints-map {
 	@include media($key) {
 		@for $i from 0 through $columns {
 			.cell__#{$key}-#{$i} {
-				width: 100%/$columns * $i;
+				width: $column * $i;
 			}
 
 		}
