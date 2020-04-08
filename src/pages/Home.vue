@@ -47,7 +47,7 @@
       </div>
       <div class="layout layout--inner box__content">
         <div class="cells card">
-          <div class="cell__11 indent__right">
+          <div class="cell__11 indent--right">
             <div class="card__pic">
               <img src="../assets/img/products/herbivore-pink-cloud.jpg" alt="">
             </div>
@@ -66,7 +66,7 @@
       <div class="box__number">03/05</div>
       <div class="layout layout--inner box__content">
         <div class="cells">
-          <div class="cell__5 indent__right card card--vertical">
+          <div class="cell__5 indent--right card card--vertical">
             <div class="card__pic card__pic--stick">
               <img src="../assets/img/products/kylieskin-body-lotion.jpg" alt="">
             </div>

@@ -1,8 +1,8 @@
 $column: 5.9%;
 $columns: 12;
-$indent: 4.6%;
+$indent: 4.8%;
 
-.indent__right {
+.indent--right {
   margin-right: $indent;
 }
 
@@ -17,6 +17,10 @@ $indent: 4.6%;
 
 .cells--between {
   justify-content: space-between;
+}
+
+.cell--wrap {
+  flex-wrap: wrap;
 }
 
 @for $i from 0 through $columns {
