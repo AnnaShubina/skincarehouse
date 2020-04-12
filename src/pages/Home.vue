@@ -115,7 +115,7 @@
                 <router-link to="/" class="btn">Try now</router-link>
               </div>
             </div>
-            <div class="card__pic">
+            <div class="card__pic card__pic--m">
               <img src="../assets/img/sale.jpg" alt="">
             </div>
           </div>

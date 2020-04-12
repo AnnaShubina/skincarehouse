@@ -20,6 +20,9 @@
       </div>
       <div class="box__content layout layout--inner">
         <div class="box box--s">
+          <div class="box__filter">
+            <CatalogueFilter/>
+          </div>
           <div class="box__header">
             <nav class="nav">
               <router-link to="/Catalogue" class="nav__item active">Soap collection</router-link>
@@ -68,11 +71,13 @@
 <script>
   import BackSvg from '../assets/img/icons/back.svg'
   import {mapState} from 'vuex'
+  import CatalogueFilter from "../components/Filter";
 
   export default {
     name: 'Catalogue',
     components: {
-      BackSvg
+      CatalogueFilter,
+      BackSvg,
     },
     data() {
       return {}
