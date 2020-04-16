@@ -9,7 +9,7 @@
       <div class="box layout layout--inner">
         <div class="box__header">
           <nav class="nav">
-            <router-link to="/Catalogue" class="nav__item">Soap collection</router-link>
+            <router-link to="/catalogue/soap" class="nav__item">Soap collection</router-link>
             <router-link to="/" class="nav__item">Creme collection</router-link>
             <router-link to="/" class="nav__item">Body collection </router-link>
             <router-link to="/" class="nav__item">Sale</router-link>

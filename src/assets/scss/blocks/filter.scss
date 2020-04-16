@@ -40,7 +40,11 @@
   padding: 20px 50px;
 }
 .filter__wrap {
-  padding: 0 180px 40px 90px;
+  padding: 0 180px 0 90px;
+}
+.filter__footer {
+  padding: 0 70px 50px;
+  text-align: right;
 }
 .filter__item {
   display: flex;

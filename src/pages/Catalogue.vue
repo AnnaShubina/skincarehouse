@@ -21,7 +21,7 @@
       <div class="box__content layout layout--inner">
         <div class="box box--s">
           <div class="box__filter">
-            <CatalogueFilter/>
+            <CatalogueFilter @accept="filterProducts"/>
           </div>
           <div class="box__header">
             <nav class="nav">
@@ -31,37 +31,8 @@
               <router-link to="/" class="nav__item" disabled>Sale</router-link>
             </nav>
           </div>
-          <div class="cells cells--between cell--wrap cardGroups">
-            <div class="card" v-for="item in products"
-                 :v-key="item.id"
-                 :class="{
-                  'card--vertical': item.size !== 'xl',
-                  'cell__9': item.size === 'l',
-                  'cell__4-indent': item.size === 'xs',
-                  'cell__8': item.size === 'm',
-                  'cell__6-indent': item.size === 's',
-                  'cells': item.size === 'xl',
-                  'card--top-s': item.size === 'xl',
-                  'card--top-m': item.size === 'm',
-                }">
-              <div class="card__pic" :class="{
-                  'indent--right': item.size === 'xl',
-                  'cell__12': item.size === 'xl',
-                }">
-                <img :src="resolveImgToUrl(`${item.id}.jpg`)" alt="">
-              </div>
-              <div class="card__content" :class="{
-                  'card__content--flex': item.size !== 'xl',
-                  'card__content--top': item.size !== 'xl',
-                  'card__content--vertical': item.size === 'xl',
-                  'card__content--bottom': item.size === 'xl',
-                }">
-                <h4 class="card__title">{{ item.title }}</h4>
-                <div class="card__price card__price--s">$&nbsp;{{ item.price }}</div>
-                <button class="btn">Shop now</button>
-              </div>
-            </div>
-          </div>
+          <ProductList :productList="products" v-if="!isFiltered"/>
+          <ProductList :productList="filteredProducts" v-if="isFiltered"/>
         </div>
       </div>
     </section>
@@ -72,15 +43,21 @@
   import BackSvg from '../assets/img/icons/back.svg'
   import {mapState} from 'vuex'
   import CatalogueFilter from "../components/Filter";
+  import ProductList from "../components/ProductList";
 
   export default {
     name: 'Catalogue',
     components: {
+      ProductList,
       CatalogueFilter,
       BackSvg,
     },
     data() {
-      return {}
+      return {
+        category: this.$route.params.id,
+        filteredProducts: [],
+        isFiltered: false
+      }
 
     },
     computed: {
@@ -88,13 +65,22 @@
         allProducts: state => state.products,
       }),
       products() {
-        return this.allProducts.filter(({category}) => category === 'soap')
+        return this.allProducts[this.category]
       }
     },
     methods: {
-      resolveImgToUrl(path) {
-        let images = require.context('../assets/img/products', false, /\.png$|\.jpg$/);
-        return images("./"+path)
+      filterProducts(value) {
+        let brand = value.brand ? value.brand.id : null;
+        let price =  value.price ? value.price.value : null;
+        if (brand || price) {
+         this.filteredProducts = this.products.filter(product => (
+           (!brand || brand === product.brand) && (!price || product.price <= price))
+         );
+          this.isFiltered = true;
+        } else {
+          this.isFiltered = false;
+        }
+
       }
     }
   }

@@ -14,7 +14,7 @@ export default new VueRouter({
       component: Home
     },
     {
-      path: '/catalogue',
+      path: '/catalogue/:id',
       name: 'catalogue',
       component: Catalogue
     },
